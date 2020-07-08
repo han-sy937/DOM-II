@@ -1,10 +1,5 @@
 // Your code goes here
-const navHoverEffect = document.querySelector("nav")
-// navHoverEffect.addEventListener('mouseover', function(event){
-//     for(let i=0; i<event.length; i++){
-//         event.target.style.color = 'red'
-//     }
-// })
+const navHoverEffect = document.querySelector("nav");
 
 navHoverEffect.addEventListener("mouseover", function(event){
     event.target.style.color = "red"
@@ -26,18 +21,30 @@ clickTagH2.addEventListener('click', () => {
     clickTagH2.textContent = 'Hop on to the fun bus!'
 })
 
-const zoomImage = document.querySelector('.img-content img')
-zoomImage.addEventListener('wheel', (event) => {
-    let scale = 1;
-    event.preventDefault();
-    scale += event.deltaY * -0.01;
-    scale = Math.min(Math.max(.125, scale), 2);
-    zoomImage.style.transform = 'scale($[scale])'
+const focusButton = document.querySelector(".btn")
+focusButton.addEventListener('focus', (event) => {
+    event.target.style.color = "pink"
+})
+focusButton.addEventListener('blur', (event) => {
+    event.target.style.color = ""
+})
+focusButton.addEventListener('submit', (event) => {
+    focusButton.innerHTML = "Submitted";
+    event.preventDefault()
 })
 
-// const entirePage = document.querySelector('body')
-// entirePage.addEventListener('keydown', function(){
-//     entirePage.alert = "Do you want to leave page"
+const doubleTrouble = document.querySelector('.text-content h2')
+doubleTrouble.addEventListener('dblclick', () => {
+    doubleTrouble.textContent = 'We are leaving!'
+})
+
+// window.addEventListener('resize', function(){
+//     setTimeout(function(){
+//         alert ('You are about to resize');
+//     }, 3000)
 // })
 
-console.log(zoomImage)
+
+
+
+console.log(doubleTrouble)
